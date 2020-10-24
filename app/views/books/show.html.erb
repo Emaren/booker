@@ -1,28 +1,39 @@
-<%= image_tag @book.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+   <div class="row">
+     <div class="col-md-4">
+       <%= image_tag @book.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @book.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @book.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Book length:</strong></td>
+                <td><%= @book.book_length %></td>
+              </tr>
+              <tr>
+                <td><strong>Author:</strong></td>
+                <td><%= @book.author %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @book.rating %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     </div>
+   </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Book length:</strong>
-  <%= @book.book_length %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @book.rating %>
-</p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
